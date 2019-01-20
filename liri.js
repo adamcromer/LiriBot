@@ -80,9 +80,9 @@ var omdbFunc = function (search) {
     axios.get(url).then(function (response) {
 
         var movie = response.data;
-        var date = moment(movie.Released).format('LL');
+        var date = moment(movie.Released, "MM-DD-YYYY").format('LL');
 
-        var movieInfo = ["\nTitle: " + movie.title + "\nDate of release: " + date + "\nIMDB Rating: " + movie.Ratings[0].value + "\nRotten Tomatoes Rating: " + movie.Ratings[1].value + "\nCountry of Origin: " + movie.Country + "\nLanguage: " + movie.Language + "\nPlot: " + movie.Plot + "\nDirector: " + movie.Director + "\nActors: " + movie.Actors
+        var movieInfo = ["\nTitle: " + movie.Title + "\nDate of release: " + date + "\nIMDB Rating: " + movie.Ratings[0].Value + "\nRotten Tomatoes Rating: " + movie.Ratings[1].Value + "\nCountry of Origin: " + movie.Country + "\nLanguage: " + movie.Language + "\nPlot: " + movie.Plot + "\nDirector: " + movie.Director + "\nActors: " + movie.Actors
         ].join("\n");
 
         var cleanData = movieInfo + divider;
