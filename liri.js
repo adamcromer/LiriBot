@@ -65,7 +65,7 @@ var bandsFunc = function (search) {
             var event = response.data[i];
             var time = moment(event.datatime).format('LLLL');
 
-            var eventInfo = ["\nVenue: " + event.venue.name + "\nLocation: " + event.venue.city + ", " + event.venue.country + "\nTime: " + time
+            var eventInfo = ["\nArtist: " + event.lineup[0] + "\nVenue: " + event.venue.name + "\nLocation: " + event.venue.city + ", " + event.venue.country + "\nTime: " + time
             ].join("\n");
 
             var cleanData = eventInfo + divider;
@@ -96,64 +96,63 @@ var omdbFunc = function (search) {
 }
 
 //Function to read randomFile data
-var readRandom = function (randomType) {
+var readRandom = function (start, end) {
     fs.readFile("random.txt", "utf8", function (error, data) {
-
-        // If the code experiences any errors it will log the error to the console.
+        console.log("readfile okay");
+        // If the code experiences any errors it will log the error to the console
         if (error) {
             return console.log(error);
         }
 
         // Then split it by commas (to make it more readable)
         var dataArr = data.split(",");
+        console.log(dataArr);
 
+        readArray(dataArr, start, end);
 
     });
 }
 
-var readArray = function (array, start, end) {
-    for (var i = start; i < end; i++) {
-        switch (array[i]) {
+var readArray = function (arr, start, end) {
+    for (var i = start; i < end + 1; i++) {
+        // console.log(arr[i]);
+        // console.log(i);
+
+        switch (arr[i]) {
+
             case "spotify":
-                spotifyFunc(array[i + 1]);
+                spotifyFunc(arr[i + 1]);
                 break;
 
             case "bands":
-                bandsFunc(array[i + 1]);
+                bandsFunc(arr[i + 1]);
+                console.log(arr[i + 1]);
                 break;
 
             case "omdb":
-                omdbFunc(array[i + 1]);
+                omdbFunc(arr[i + 1]);
                 break;
         }
     }
-}
-
-//Function to run when random is typed with no search typef
-var randomDefault = function () {
-
 }
 
 //Function to run on searchType of do-what-it-says or random
 var randomFunc = function (search) {
     switch (search) {
         case "spotify":
-            var randomSpotify;
-            spotifyFunc(randomSpotify);
+            readRandom(0, 1);
             break;
 
         case "bands":
-            var randomBands;
-            bandsFunc(randomBands);
+            readRandom(2, 3);
             break;
 
         case "omdb":
-            var randomOMDB;
-            omdbFunc(randomOMDB);
+            readRandom(4, 5);
             break;
 
         default:
-            randomDefault();
+            readRandom(0, 5);
     }
 }
 
@@ -179,11 +178,11 @@ var masterFunction = function (type, term) {
             break;
 
         case "do-what-it-says":
-
+            randomFunc(term);
             break;
 
         case "random":
-
+            randomFunc(term);
             break;
 
         default:
