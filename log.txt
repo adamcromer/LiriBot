@@ -203,3 +203,27 @@ Album name: The Anteroom
 On Spotify: https://open.spotify.com/track/4EgOBJmOd71QqAlqFXQxCy
 
 ------------------------
+
+Venue: Coachella
+Location: Indio, United States
+Time: Sunday, January 20, 2019 7:34 PM
+
+------------------------
+
+Venue: Coachella
+Location: Indio, United States
+Time: Sunday, January 20, 2019 7:34 PM
+
+------------------------
+
+Venue: Firefly Music Festival
+Location: Dover, United States
+Time: Sunday, January 20, 2019 7:34 PM
+
+------------------------
+
+Venue: Bonnaroo Music and Arts Festival
+Location: Manchester, United States
+Time: Sunday, January 20, 2019 7:34 PM
+
+------------------------
