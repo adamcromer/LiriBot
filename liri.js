@@ -65,7 +65,10 @@ var bandsFunc = function (search) {
             var event = response.data[i];
             var time = moment(event.datatime).format('LLLL');
 
-            var eventInfo = ["\nArtist: " + event.lineup[0] + "\nVenue: " + event.venue.name + "\nLocation: " + event.venue.city + ", " + event.venue.country + "\nTime: " + time
+            var eventInfo = ["\nArtist: " + event.lineup[0] +
+                "\nVenue: " + event.venue.name +
+                "\nLocation: " + event.venue.city + ", " + event.venue.country +
+                "\nTime: " + time
             ].join("\n");
 
             var cleanData = eventInfo + divider;
@@ -85,7 +88,15 @@ var omdbFunc = function (search) {
         var movie = response.data;
         var date = moment(movie.Released, "MM-DD-YYYY").format('LL');
 
-        var movieInfo = ["\nTitle: " + movie.Title + "\nDate of release: " + date + "\nIMDB Rating: " + movie.Ratings[0].Value + "\nRotten Tomatoes Rating: " + movie.Ratings[1].Value + "\nCountry of Origin: " + movie.Country + "\nLanguage: " + movie.Language + "\nPlot: " + movie.Plot + "\nDirector: " + movie.Director + "\nActors: " + movie.Actors
+        var movieInfo = ["\nTitle: " + movie.Title +
+            "\nDate of release: " + date +
+            "\nIMDB Rating: " + movie.Ratings[0].Value +
+            "\nRotten Tomatoes Rating: " + movie.Ratings[1].Value +
+            "\nCountry of Origin: " + movie.Country +
+            "\nLanguage: " + movie.Language +
+            "\nPlot: " + movie.Plot +
+            "\nDirector: " + movie.Director +
+            "\nActors: " + movie.Actors
         ].join("\n");
 
         var cleanData = movieInfo + divider;
@@ -98,7 +109,7 @@ var omdbFunc = function (search) {
 //Function to read randomFile data
 var readRandom = function (start, end) {
     fs.readFile("random.txt", "utf8", function (error, data) {
-        console.log("readfile okay");
+
         // If the code experiences any errors it will log the error to the console
         if (error) {
             return console.log(error);
@@ -115,8 +126,6 @@ var readRandom = function (start, end) {
 
 var readArray = function (arr, start, end) {
     for (var i = start; i < end + 1; i++) {
-        // console.log(arr[i]);
-        // console.log(i);
 
         switch (arr[i]) {
 
@@ -126,7 +135,6 @@ var readArray = function (arr, start, end) {
 
             case "bands":
                 bandsFunc(arr[i + 1]);
-                console.log(arr[i + 1]);
                 break;
 
             case "omdb":
