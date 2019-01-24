@@ -5,13 +5,13 @@ Liri Bot is a Command Line Interface or CLI which requests data from Spotify, Ba
 
 ## <b>How To Use</b>
 
-<hr>
-
 To run the LIRI Bot you must run the program liri.js in the command line of node and then a valid search function. You must always input node and liri.js as the first two arguments.
 
 **Example**: "node liri.js spotify-this-song subterranean homesick blues"
 
 If you don't put in any argument it will explain how to ask for help.
+
+After each valid search the Song, Concert, or Movie information will be added to the bottom of a log.txt file. If you do not have a log.txt file it will create one.
 <br><br>
 
 
@@ -66,11 +66,10 @@ If a fourth argument is not listed it will provide random searches for all three
 
 ## <b>Install This Program</b>
 
-<hr>
 
 Clone this repository.
 
-You must create API Keys from Spotify, Bands In Town, and OMDb.
+You must create API Keys from [Spotify,](https://developer.spotify.com/my-applications/#!/) [Bands In Town,](http://www.artists.bandsintown.com/bandsintown-api) and [OMDb.](http://www.omdbapi.com/apikey.aspx)
 
 Create a .env file formatted like this with your API Keys instead of where it says API Key. Spotify requires an ID key and a secret Key.
 
