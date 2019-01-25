@@ -221,6 +221,10 @@ var masterFunction = function (type, term) {
             randomFunc(term);
             break;
 
+        case "surprise":
+            randomFunc(term);
+            break;
+
         case "random":
             randomFunc(term);
             break;

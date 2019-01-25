@@ -65,16 +65,16 @@ To search for movie information type:
 as the third argument and the movie name as the fourth argument. The OMDb API will provide you information about coming up concerts by the provided artist including: Date of Release, IMDB and Rotten Tomatoes ratings, Country of Origin, Language, Plot Summary, Director, and actors.
 
 **Example**: "node liri.js movie-this movie name here"
-<img align="center" background-color="white" src="/images/movie.jpg" width="100%">
+<img align="center" background-color="white" src="./images/movie.jpg" width="100%">
 
 A default search will happen if a movie is not declared.
 <br><br>
 
-### <b>Random Search</b>
+### <b>Surprise Search</b>
 
 To do a surprise or random search type:
 
-**"do-what-it-says" or "random"**
+**"do-what-it-says" or "surprise"**
 
 as the third argument and either spotify, bands, or omdb as the fourth argument for a random search which reads information from the random.txt file.
 
@@ -88,7 +88,7 @@ Clone this repository.
 
 You must create API Keys from [Spotify,](https://developer.spotify.com/my-applications/#!/) [Bands In Town,](http://www.artists.bandsintown.com/bandsintown-api) and [OMDb.](http://www.omdbapi.com/apikey.aspx)
 
-Create a .env file formatted like this with your API Keys instead of where it says API Key. Spotify requires an ID key and a secret Key.
+Create a .env file in this format with your API Keys instead of where it says API Key. Spotify requires an ID key and a secret Key.
 
 <img align="center" background-color="white" src="images/env.jpg" width="100%">
 
