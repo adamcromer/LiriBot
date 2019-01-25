@@ -65,7 +65,7 @@ To search for movie information type:
 as the third argument and the movie name as the fourth argument. The OMDb API will provide you information about coming up concerts by the provided artist including: Date of Release, IMDB and Rotten Tomatoes ratings, Country of Origin, Language, Plot Summary, Director, and actors.
 
 **Example**: "node liri.js movie-this movie name here"
-<img align="center" background-color="white" src="images/movie.jpg" width="100%">
+<img align="center" background-color="white" src="/images/movie.jpg" width="100%">
 
 A default search will happen if a movie is not declared.
 <br><br>
