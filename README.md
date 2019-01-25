@@ -90,7 +90,7 @@ You must create API Keys from [Spotify,](https://developer.spotify.com/my-applic
 
 Create a .env file in this format with your API Keys instead of where it says API Key. Spotify requires an ID key and a secret Key.
 
-<img align="center" background-color="white" src="images/env.jpg" width="100%">
+<img align="center" background-color="white" src="images/env.JPG" width="100%">
 
 Open up your folder container the LIRI Bot files in the command line. **'CTRL + `**<br>
 
