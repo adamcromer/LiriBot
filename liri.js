@@ -33,6 +33,10 @@ var appendData = function (data) {
 //Function to connect to Spotify's API
 var spotifyFunc = function (search) {
 
+    if (search === "default") {
+        search = "Get Lucky";
+    }
+
     spotify.search({ type: 'track', query: search }, function (err, data) {
         if (err) {
             return console.log('Error occurred: ' + err);
@@ -55,6 +59,10 @@ var spotifyFunc = function (search) {
 
 //Function to use axios to connect to Bands In Town API
 var bandsFunc = function (search) {
+
+    if (search === "default") {
+        search = "Unknown Mortal Orchestra";
+    }
 
     url = "https://rest.bandsintown.com/artists/" + search + "/events?app_id=" + bandsKey;
 
@@ -81,6 +89,11 @@ var bandsFunc = function (search) {
 
 //Function to use axios to connect to OMDB API
 var omdbFunc = function (search) {
+
+    if (search === "default") {
+        search = "Groundhog Day";
+    }
+
     var url = "http://www.omdbapi.com/?apikey=" + omdbKey + "&t=" + search;
 
     axios.get(url).then(function (response) {
@@ -117,7 +130,6 @@ var readRandom = function (start, end) {
 
         // Then split it by commas (to make it more readable)
         var dataArr = data.split(",");
-        console.log(dataArr);
 
         readArray(dataArr, start, end);
 
@@ -177,11 +189,31 @@ var masterFunction = function (type, term) {
             bandsFunc(term);
             break;
 
+        case "bands":
+            bandsFunc(term);
+            break;
+
+        case "bandsintown":
+            bandsFunc(term);
+            break;
+
         case "spotify-this-song":
             spotifyFunc(term);
             break;
 
+        case "spotify":
+            spotifyFunc(term);
+            break;
+
         case "movie-this":
+            omdbFunc(term);
+            break;
+
+        case "movie":
+            omdbFunc(term);
+            break;
+
+        case "omdb":
             omdbFunc(term);
             break;
 
@@ -201,6 +233,9 @@ var masterFunction = function (type, term) {
 // log user input
 var searchType = process.argv[2];
 var searchTerm = process.argv.slice(3).join(" ");
+if (searchTerm === "") {
+    searchTerm = "default";
+}
 
 //Runs the masterFunction for the first time
 masterFunction(searchType, searchTerm);
